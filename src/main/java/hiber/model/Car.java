@@ -1,10 +1,20 @@
 package hiber.model;
 
+import javax.persistence.*;
 import java.util.Objects;
 
+@Entity
+@Table(name="cars")
 public class Car {
+
+    @Column(name="model")
     private String model;
+
+    @Id
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    @Column(name="series")
     int series;
+
     public Car() {}
     public Car(int series, String model) {
         this.series = series;

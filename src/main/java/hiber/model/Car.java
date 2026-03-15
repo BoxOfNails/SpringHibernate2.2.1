@@ -7,18 +7,21 @@ import java.util.Objects;
 @Table(name="cars")
 public class Car {
 
+    @Id
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    @Column(name="id")
+    private int id;
+
     @Column(name="model")
     private String model;
 
-    @Id
-    @GeneratedValue(strategy= GenerationType.IDENTITY)
     @Column(name="series")
-    int series;
+    private int series;
 
     public Car() {}
-    public Car(int series, String model) {
-        this.series = series;
+    public Car(String model, int series) {
         this.model = model;
+        this.series = series;
     }
 
     public String getModel() {

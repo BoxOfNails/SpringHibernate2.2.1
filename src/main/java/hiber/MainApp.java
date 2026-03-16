@@ -54,6 +54,12 @@ public class MainApp {
          userService.linkUserToCar(user1, car1);
       }
 
+      System.out.println("Users after linking them to cars:");
+      users = userService.listUsers();
+      for (User user : users) {
+         System.out.println(user);
+      }
+
       String targetModel = "model4";
       int targetSeries = 243528;
       System.out.println("Looking for users with car model = " + targetModel + " and series = " + targetSeries);
